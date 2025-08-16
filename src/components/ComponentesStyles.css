@@ -1,0 +1,56 @@
+#polygon {
+    position: relative;
+    overflow: hidden;
+}
+  
+#polygon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 2;
+    width: 100%;
+    height: 100%;
+    background-color: #100E0F;
+    clip-path: polygon(80% 0, 100% 0%, 100% 100%, 60% 100%);
+    z-index: 1;
+}
+
+#polygon::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #A18042;
+    clip-path: polygon(80% 0, 100% 0%, 100% 100%, 60% 100%);
+    z-index: 0;
+    transform: translateX(8px);
+    box-shadow: -5px 0 0 -5px #A18042;
+    filter: brightness(1.25);
+}
+
+@media (max-width: 639px) {
+    #polygon::before {
+        right: -30px;
+    }
+    
+    #polygon::after {
+        transform: translateX(22px);
+    }
+}
+
+
+/* #polygon::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+    width: 90px;
+    height: 90px;
+    background-image: url('./../../public/logoSmall.png');
+    background-size: cover;
+    background-position: center;
+    z-index: 2;
+} */
